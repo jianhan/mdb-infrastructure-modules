@@ -8,10 +8,10 @@ module "lambda_iam" {
 # ------------------------------------------------------------------------------
 # LAMBDA FUNCTION RESOURCE
 # ------------------------------------------------------------------------------
-resource "aws_lambda_function" "hn" {
+resource "aws_lambda_function" "lambda_function" {
   filename      = var.filename
-  function_name = "${var.env_prefix}_hn_function"
-  role          = module.lambda_iam.iam_lambda_arn
+  function_name = "${var.env_prefix}_${var.function_name}_function"
+  role          = module.lambda_iam.lambda_arn
   handler       = var.handler
   source_code_hash = filebase64sha256(var.filename)
   runtime = var.runtime

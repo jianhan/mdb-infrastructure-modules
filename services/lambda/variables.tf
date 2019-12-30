@@ -8,6 +8,11 @@ variable "env_prefix" {
   description = "Environment prefix"
 }
 
+variable "function_name" {
+  type = string
+  description = "function name"
+}
+
 variable "handler" {
   type = string
   description = "Lambda handler"
