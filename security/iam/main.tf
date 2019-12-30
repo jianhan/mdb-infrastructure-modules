@@ -26,7 +26,7 @@ resource "aws_iam_role" "lambda" {
 # IAM POLICY FOR LOGGING
 # ------------------------------------------------------------------------------
 resource "aws_iam_policy" "lambda_logging" {
-  name = "lambda-logging"
+  name = "lambda_logging"
   path = "/"
   description = "IAM policy for logging from a lambda"
 
@@ -52,6 +52,6 @@ EOF
 # ATTACH POLICY TO ROLE FOR LOGS
 # ------------------------------------------------------------------------------
 resource "aws_iam_role_policy_attachment" "lambda_logs" {
-  role = aws_iam_role.lambda.arn
+  role = aws_iam_role.lambda.name
   policy_arn = aws_iam_policy.lambda_logging.arn
 }
