@@ -26,7 +26,7 @@ resource "aws_iam_role" "lambda" {
 # IAM POLICY FOR LOGGING
 # ------------------------------------------------------------------------------
 resource "aws_iam_policy" "lambda_logging" {
-  name = "lambda_logging"
+  name = "lambda-logging"
   path = "/"
   description = "IAM policy for logging from a lambda"
 
