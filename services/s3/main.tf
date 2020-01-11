@@ -38,7 +38,7 @@ locals {
 # CREATE S3 BUCKET
 # ------------------------------------------------------------------------------
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "${var.bucket_prefix}_bucket"
+  bucket = "${var.bucket_prefix}-bucket"
   versioning {
     enabled = true
   }
