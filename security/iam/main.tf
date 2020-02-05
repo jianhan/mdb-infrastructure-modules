@@ -18,7 +18,7 @@ data "aws_iam_policy_document" "assume_role_policy" {
 # IAM ROLE FOR LAMBDA
 # ------------------------------------------------------------------------------
 resource "aws_iam_role" "lambda" {
-  name = "lambda"
+  name = "lambda_${var.function_name}"
   assume_role_policy = data.aws_iam_policy_document.assume_role_policy.json
 }
 
@@ -26,7 +26,7 @@ resource "aws_iam_role" "lambda" {
 # IAM POLICY FOR LOGGING
 # ------------------------------------------------------------------------------
 resource "aws_iam_policy" "lambda_logging" {
-  name = "lambda_logging"
+  name = "lambda_logging_${var.function_name}}"
   path = "/"
   description = "IAM policy for logging from a lambda"
 
