@@ -22,3 +22,7 @@ variable "runtime" {
   type = string
   description = "Lambda run time"
 }
+
+variable "environment_variables" {
+  type = "map"
+}

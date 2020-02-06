@@ -16,4 +16,7 @@ resource "aws_lambda_function" "lambda_function" {
   handler       = var.handler
   source_code_hash = filebase64sha256(var.filename)
   runtime = var.runtime
+  environment {
+    variables = var.environment_variables
+  }
 }
