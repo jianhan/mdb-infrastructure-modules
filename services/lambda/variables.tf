@@ -26,3 +26,13 @@ variable "runtime" {
 variable "environment_variables" {
   type = "map"
 }
+
+variable "timeout" {
+  type = number
+  default = 300
+}
+
+variable "memory_size" {
+  type = number
+  default = 256
+}
